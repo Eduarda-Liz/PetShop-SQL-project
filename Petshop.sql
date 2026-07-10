@@ -122,13 +122,11 @@ inner join  item_pedido as i
 left join produto as pr
     on i.id_produto = pr.id_produto
 group by
-    c.id_cliente,
-    c.nome
-having
-    sum(i.quantidade * i.valor_unitario) > 0;
+    c.id_cliente, c.nome having sum(i.quantidade * i.valor_unitario) > 0;
 
 
 select * from vw_relatorio_final; 
 
-update cliente set nome = "Eduarda" where id_cliente = 1;
+update cliente set nome = "Eduarda Liz" where id_cliente = 1;
+update cliente set nome = "Gabriela Bento" where id_cliente =2;
 
